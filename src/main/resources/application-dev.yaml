@@ -15,9 +15,9 @@ spring:
     baselineOnMigrate: true
     
   datasource:
-    url: 'jdbc:postgresql://${FHIR_DB_HOST}:5432/fhir'
-    username: healthapp
-    password: ${FHIR_DB_PASSWORD}
+    url: ${FHIR_DB_HOST}
+    username: postgres
+    password: ${DB_PASSWORD}
     driverClassName: org.postgresql.Driver
   #datasource:
   #  url: 'jdbc:h2:file:./target/database/h2'
