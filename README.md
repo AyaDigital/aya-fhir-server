@@ -1,13 +1,25 @@
-# HAPI-FHIR Starter Project
+# AYA FHIR SERVER
 
 ## Note from Chris Coy
-Just run
+First, set up your env variables, SET on Windows and EXPORT on *Nix.
+
 ```
-mvn -Djetty.port=5001 jetty:run
+SET FHIR_DB_HOST=localhost
+SET FHIR_DB_SCHEMA=healthapp_fhir
+SET FHIR_DB_USER=healthapp
+SET FHIR_DB_PASSWORD=test123
+SET FHIR_HOST=localhost
+SET FHIR_PORT=8080
 ```
 
-Then visit http://localhost:5001/ (for Swagger and browser based testing)
-or http://localhost:5001/fhir (for REST testing via Postman or SoapUI)
+Then run.
+
+```
+mvn clean package spring-boot:repackage -Pboot && java -jar target/ROOT.war
+```
+
+Then visit http://localhost:8080/ (for Swagger and browser based testing)
+or http://localhost:8080/fhir (for REST testing via Postman or SoapUI)
 
 ## Intro
 This project is a complete starter project you can use to deploy a FHIR server using HAPI FHIR JPA.
